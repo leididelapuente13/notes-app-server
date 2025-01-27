@@ -6,3 +6,39 @@ datasource db {
   provider = "postgresql"
   url      = env("POSTGRES_URL")
 }
+
+model User {
+  id String @id @default(uuid()) @unique
+  name String
+  email String @unique
+  password String
+  notes Note[]
+}
+
+model Tag {
+  id String @id @default(uuid()) @unique
+  name String @unique
+  notes NotesOnTags[]
+}
+
+
+model Note {
+  id String @id @default(uuid()) @unique
+  title String 
+  text String?
+  is_archived Boolean
+  user User @relation(fields: [user_id], references: [id])
+  tags NotesOnTags[]
+  user_id String
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+}
+
+model NotesOnTags {
+  note Note? @relation(fields: [note_id], references: [id])
+  note_id String
+  tag Tag @relation(fields: [tag_id], references: [id])
+  tag_id String
+
+  @@id([note_id, tag_id])
+}
