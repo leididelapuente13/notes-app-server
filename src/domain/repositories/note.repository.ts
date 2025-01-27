@@ -1,6 +1,6 @@
 import { NoteEntity } from "../entities";
 
-export abstract class NoteDatasource {
+export abstract class NoteRepository {
     abstract createNote(note: NoteEntity): Promise<NoteEntity>;
     abstract getNotes(): Promise<NoteEntity[]>;
     abstract getArchivedNotes(): Promise<NoteEntity[]>;

@@ -1,12 +1,12 @@
-interface Note {
+export interface Note {
     id: string;
     title: string;
     text: string;
     tags: string[];
     is_archived: boolean;
     user_id: string;
-    created_at?: Date;
-    updated_at?: Date;
+    created_at: Date;
+    updated_at: Date;
 }
 
 export class NoteEntity {
@@ -17,8 +17,8 @@ export class NoteEntity {
     public tags: string[];
     public is_archived: boolean;
     public user_id: string;
-    public created_at?: Date;
-    public updated_at?: Date;
+    public created_at: Date;
+    public updated_at: Date;
 
 
     constructor(note: Note) {
