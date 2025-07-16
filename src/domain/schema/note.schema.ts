@@ -1,4 +1,4 @@
-import z from 'zod';
+import { z } from 'zod';
 import { NoteEntity } from '../entities';
 import { TagSchema } from './tag.schema';
 
