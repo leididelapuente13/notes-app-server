@@ -3,23 +3,23 @@ NOTE TAKING APP
 ENTITIES
 
 - note
-	- id
-	- title
-	- text
-	- tags[]
-	- is_archived
-	- updated_at
-	- created_at
-	- user_id
+  - id
+  - title
+  - text
+  - tags[]
+  - is_archived
+  - updated_at
+  - created_at
+  - user_id
 
 - user
-	- id
-	- email
-	- password
+  - id
+  - email
+  - password
 
 - tag
-	- id
-	- name
+  - id
+  - name
 
 RELATIONSHIPS
 
